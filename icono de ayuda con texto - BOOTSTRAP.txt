@@ -1,0 +1,1 @@
+<i class="tip" data-tip-content="Ingrese el distrito de ubicación"></i>

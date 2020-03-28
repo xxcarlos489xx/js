@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+<div id="boton" onclick="divLogin()">
+
+Mostrar/Ocultar
+
+</div>
+
+<div id="caja">
+
+</div>
+</body>
+
+
+<style type="text/css">
+  #boton{
+
+  padding: 10px;
+
+  background: orange;
+
+  width: 95px;
+
+  cursor: pointer;
+
+  margin-top: 10px;
+
+  margin-bottom: 10px;
+
+  box-shadow: 0px 0px 1px #000;
+
+  display: inline-block;
+
+}
+
+
+
+#boton:hover{
+
+  opacity: .8;
+
+}
+
+
+
+#caja{
+
+  width: 100%;
+
+  margin: auto;
+
+  height: 0px;
+
+  background: #000;
+
+  box-shadow: 10px 10px 3px #D8D8D8;
+
+  transition: height .4s;
+
+}
+
+</style>
+
+
+<script type="text/javascript">
+  var clic = 1;
+
+function divLogin(){ 
+
+   if(clic==1){
+
+   document.getElementById("caja").style.height = "100px";
+
+   clic = clic + 1;
+
+   } else{
+
+       document.getElementById("caja").style.height = "0px";      
+
+    clic = 1;
+
+   }   
+
+}
+
+  
+</script>
+
+
+</html>
+

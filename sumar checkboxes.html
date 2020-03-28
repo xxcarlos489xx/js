@@ -1,0 +1,123 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+<script type="text/JavaScript">
+function Suma(isChecked, myValue)
+{
+tot = parseInt(document.form1.precio_id.value);
+myValue = parseInt(myValue);
+if (isChecked) document.form1.precio_id.value = tot + myValue;
+else document.form1.precio_id.value = tot - myValue;
+}
+</script>
+<form name="form1" action="procesa.php" method="POST">
+<div>
+usted tiene un total de 175 puntos para escoger opciones de este
+menú, recuerde ahorrar lara tener mas puntos adelante
+<p><input type="checkbox" value="30" name="Check1" onclick=" Suma(this.checked,this.value)" >opción numero 1 por 30 puntos</p>
+<p><input type="checkbox" value="40" name="Check2" onclick=" Suma(this.checked,this.value)" >opción numero 2 por 40 puntos</p>
+<p><input type="checkbox" value="50" name="Check3" onclick=" Suma(this.checked,this.value)" >opción numero 3 por 50 puntos</p>
+<p><input type="checkbox" value="100" name="Check4" onclick=" Suma(this.checked,this.value)" >opción numero 4 por 100 puntos</p>
+<p><input type="checkbox" value="50" name="Check5" onclick=" Suma(this.checked,this.value)" >opción numero 5 por 50 puntos</p>
+<p><input type="checkbox" value="15" name="Check6" onclick=" Suma(this.checked,this.value)" >opción numero 6 por 15 puntos</p>
+<p>
+
+
+<input type="text" name="precio_id" value="0">
+
+
+<input type="submit" value="Continuar">
+</div>
+</form>
+
+<p>usted lleva un total de puntos gastado</p>
+<div style="position: absolute; width: 381px; height: 78px; z-index: 1; left: 270px; top: 130px" id="capa1">
+Hacer Clicks aquí para ver los puntos actualizados.<p>Revisar
+antes de enviar.</div>
+
+
+<div class="pull-right">
+
+	<a class="calificarProducto" href="#modalComentarios" data-toggle="modal" idComentario="">
+													
+		<button class="btn btn-default backColor">Calificar Producto</button>
+
+	</a>
+
+</div>
+
+
+<div  class="modal fade modalFormulario" id="modalComentarios" role="dialog">
+	
+	<div class="modal-content modal-dialog">
+		
+		<div class="modal-body modalTitulo">
+			
+			<h3 class="backColor">CALIFICA ESTE PRODUCTO</h3>
+
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+
+			<form method="post" onsubmit="return validarComentario()">
+
+				<input type="hidden" value="" id="idComentario" name="idComentario">
+				
+				<h1 class="text-center" id="estrellas">
+
+		       		<i class="fa fa-star text-success" aria-hidden="true"></i>
+					<i class="fa fa-star text-success" aria-hidden="true"></i>
+					<i class="fa fa-star text-success" aria-hidden="true"></i>
+					<i class="fa fa-star text-success" aria-hidden="true"></i>
+					<i class="fa fa-star text-success" aria-hidden="true"></i>
+
+				</h1>
+
+				<div class="form-group text-center">
+
+		       		<label class="radio-inline"><input type="radio" name="puntaje" value="0.5">0.5</label>
+					<label class="radio-inline"><input type="radio" name="puntaje" value="1.0">1.0</label>
+					<label class="radio-inline"><input type="radio" name="puntaje" value="1.5">1.5</label>
+					<label class="radio-inline"><input type="radio" name="puntaje" value="2.0">2.0</label>
+					<label class="radio-inline"><input type="radio" name="puntaje" value="2.5">2.5</label>
+					<label class="radio-inline"><input type="radio" name="puntaje" value="3.0">3.0</label>
+					<label class="radio-inline"><input type="radio" name="puntaje" value="3.5">3.5</label>
+					<label class="radio-inline"><input type="radio" name="puntaje" value="4.0">4.0</label>
+					<label class="radio-inline"><input type="radio" name="puntaje" value="4.5">4.5</label>
+					<label class="radio-inline"><input type="radio" name="puntaje" value="5.0" checked>5.0</label>
+
+				</div>
+
+				<div class="form-group">
+			  		
+			  		<label for="comment" class="text-muted">Tu opinión acerca de este producto: <span><small>(máximo 300 caracteres)</small></span></label>
+			  		
+			  		<textarea class="form-control" rows="5" id="comentario" name="comentario" maxlength="300" required></textarea>
+
+			  		<br>
+					
+					<input type="submit" class="btn btn-default backColor btn-block" value="ENVIAR">
+
+				</div>
+
+
+			</form>
+
+		</div>
+
+		<div class="modal-footer">
+      	
+      	</div>
+
+	</div>
+
+</div>
+
+
+
+</body>
+
+</html>

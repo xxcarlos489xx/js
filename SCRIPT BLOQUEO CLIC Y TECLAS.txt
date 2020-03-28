@@ -1,0 +1,55 @@
+teclas que pueden vulnerar el sistema
+
+para inspeccionar la pagina
+f12
+ctrl + shift + i
+
+
+ver codigo fuente de la pagina
+ctrl + u
+
+<script type='text/javascript'>
+
+
+  //BLOQUEAR CLIC DERECHO (SOLO POR JAVASCRIPT)
+  document.oncontextmenu = function(){return false}
+
+
+  //BLOQUEAR CLIC DERECHO (si tienes implementada la librería de Jquery en tu web)
+  $(function(){
+      $(document).bind("contextmenu",function(e){
+          return false;
+      });
+  });
+
+  //BLOQUEAR COMBINACIONES DE TECLAS
+  document.onkeydown=function() {
+
+    if (window.event) {
+      if((window.event.keyCode == 8) ||  ((window.event.keyCode >= 113) && (window.event.keyCode <= 123))){
+      //Bloquear Backspace
+      //Bloquear Teclas Fxx (excepto F1)
+      window.event.cancelBubble = true;
+      window.event.keyCode = 8;
+      window.event.returnValue = false;
+      return false;
+      }
+    }
+
+    if(event.altLeft) {
+      if((window.event.keyCode == 37) || (window.event.keyCode == 39)) {
+      //Bloquear Alt + Cursor Izq/Der.
+      return false;
+      }
+    }
+
+    if(event.ctrlKey) {
+    //Bloquear Ctrl
+    return false;
+    }
+
+    //alert(window.event.keyCode);
+    return true;
+  }
+</script>
+

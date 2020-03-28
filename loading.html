@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="probando.css" rel="stylesheet">
+
+</head>
+
+<body>
+        <div class="container" id="container">
+                <div class="preloader">
+                    <p>Cargando</p>
+                </div>
+            </div>
+            
+            <h1>Bienvenidos a mi página</h1>
+            <p>Este texto se muestra luego de haber cargado la página</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum ducimus beatae reprehenderit rem tenetur sapiente, repudiandae officia quam libero aspernatur quod possimus voluptatum iusto minus a, enim culpa. Itaque, fuga!</p>
+    <p>Sed similique error molestias est, consequuntur quam quis necessitatibus nam, eum amet fugiat mollitia obcaecati molestiae ut praesentium perferendis repudiandae nostrum perspiciatis voluptate, nulla? Impedit, repellendus ullam modi doloribus quae.</p>
+
+    <script src="probando.js"></script>
+<script>
+  var container = document.getElementById('container');
+setTimeout(function() {
+    container.classList.add('cerrar');
+  document.body.style.overflowY= "visible";// despueés de cargar le devolvemos el scroll
+}, 20000);
+</script>
+</body>
+<style type="text/css">
+    body {
+    margin: 0;
+  overflow-Y: hidden; /*quitar el scroll*/
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    background: #222;
+    color: #fff;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+.preloader {
+    margin: auto;
+    
+    width: 350px;
+    height: 30px;
+    background: rgba(255,255,255,0.1);
+    
+    position: relative;
+}
+
+.preloader:before {
+    content: "";
+    position: absolute;
+    background: green;
+    width: 0;
+    height: 30px;
+    
+    animation: preloader 10s infinite;
+}
+
+.preloader p {
+    margin: 0;
+    line-height: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cerrar {
+    transform: translateY(-100%);
+    transition: all 0.5s;
+}
+
+@keyframes preloader {
+    90% {
+        width: 100%;
+        opacity: 1;
+    }
+    100% {
+        width: 100%;
+        opacity: 0;
+    }
+}
+</style>
+</html>

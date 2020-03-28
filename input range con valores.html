@@ -1,0 +1,28 @@
+<html>
+<head>
+
+</head>
+<body>
+
+
+
+<div id="etiqueta"></div>
+<input id="input" type="range" value="1" min="0" max="100" autocomplete="off">
+			  		
+
+
+</body>
+<script type="text/JavaScript">
+var elInput = document.querySelector('#input');
+if (elInput) {
+  var etiqueta = document.querySelector('#etiqueta');
+  if (etiqueta) {
+    etiqueta.innerHTML = elInput.value;
+
+    elInput.addEventListener('input', function() {
+      etiqueta.innerHTML = elInput.value;
+    }, false);
+  }
+}
+</script>
+</html>

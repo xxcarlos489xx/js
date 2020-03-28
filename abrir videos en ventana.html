@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+<style>
+    
+
+#modal {
+position: absolute;
+width: 100vw;
+height: 100vh;
+left: 0;
+top: 0;
+background: rgba(0,0,0,0.7);
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+align-content: center;
+-webkit-box-pack: center;
+justify-content: center;
+}
+    #close{
+        color:red;
+        position:absolute;
+        top:10px;
+        right:10px;
+    }
+    @-webkit-keyframes fade {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+@keyframes fade {
+0% { opacity: 0; }
+100% { opacity: 1; }
+}
+</style>
+<title>Documento sin título</title>
+<script> 
+    function abremodal(){ $("body").append('<div id="modal"> <video id="mivideo"> <source src=".mp4" type="video/mp4"\><source src=".mp4" type="video/mp4">Tu navegador no implementa el elemento</video><div id="close"> <button>Cerrar</button> </div></div>')
+document.getElementById('mivideo').play();
+
+$( "#close" ).click(function() {
+  $("#modal").fadeOut(600) ; setTimeout(function(){ $("#modal").remove() }, 600);
+});
+}
+    </script>
+</head>
+
+<body>
+<div  onclick="abremodal();">abrir</div>
+</body>
+</html>
