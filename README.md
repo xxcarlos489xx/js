@@ -1,0 +1,2 @@
+# js
+diferentes funciones
