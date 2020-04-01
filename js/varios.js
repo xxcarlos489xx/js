@@ -94,6 +94,10 @@ $("input[name='textotest']").change(function() {
 
 	alert("holi");
 });
+
+$("select[name='tipo_persona']").change(function() {
+	alert("holi");
+});
 /*=============================================================*/
 /*=============================================================*/
 $(".btnPagar").show();
@@ -104,5 +108,23 @@ var dire1 = $('.dire1').val();
 var distrito = $('select[name="seleccionarPais"] option:selected').text();
 $(".formPagarTrans input[name='refer1']").attr("value", refer1);
 $(".sumaCesta").html("0");
+$("#tipo_libro").val("");
+$("#selectall").prop("checked", true);
+$("#selectall").prop("checked", false);
+$("input[name='tipo_radio']").prop("checked", false);
+$('#cuadroAlerta').removeClass("alert-danger").addClass("alert-primary");
+document.getElementById("freserva").value = "";
+document.querySelector('input[name="tipo_radio"]:checked').checked = false;
+$("#divTipoDocJuri").show(1000);
+$("#divTipoDocJuri").show("fast");
+$("#divTipoDoc").hide(1000);
+$("#divTipoDoc").hide("fast");
+document.getElementById("spanText").innerHTML = "DOCUMENTO DE IDENTIDAD DEL REPRESENTANTE LEGAL";
+$("#checkRequi2").attr("required","required");
+$("#checkRequi").removeAttr("required");
 /*=============================================================*/
 /*=============================================================*/
+var drEvent = $('#foto_vig_poder').dropify();
+                    drEvent = drEvent.data('dropify');
+                    drEvent.resetPreview();
+                    drEvent.clearElement();
