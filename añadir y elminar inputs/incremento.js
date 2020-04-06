@@ -1,6 +1,5 @@
 $(document).ready(function() {
         var iCnt = 0;
-
 // Crear un elemento div añadiendo estilos CSS
         var container = $(document.createElement('div')).css({
             padding: '5px', margin: '20px', width: '170px', border: '1px dashed',
@@ -8,7 +7,7 @@ $(document).ready(function() {
             borderLeftColor: '#999', borderRightColor: '#999'
         });
 
-        $('#btAdd').click(function() {
+    $('#btAdd').click(function() {
             if (iCnt <= 19) {
 
                 iCnt = iCnt + 1;
@@ -16,16 +15,12 @@ $(document).ready(function() {
                 // Añadir caja de texto.
                 $(container).append('<input type=text class="input" id=tb' + iCnt + ' ' +
                             'value="Elemento de Texto ' + iCnt + '" />');
-
                 if (iCnt == 1) {   
 
- var divSubmit = $(document.createElement('div'));
-                    $(divSubmit).append('<input type=button class="bt" onclick="GetTextValue()"' + 
-                            'id=btSubmit value=Enviar />');
-
+                        var divSubmit = $(document.createElement('div'));
                 }
 
- $('#main').after(container, divSubmit); 
+            $('#main').after(container, divSubmit); 
             }
             else {      //se establece un limite para añadir elementos, 20 es el limite
                 
@@ -36,7 +31,9 @@ $(document).ready(function() {
             }
         });
 
-        $('#btRemove').click(function() {   // Elimina un elemento por click
+
+    
+$('#btRemove').click(function() {   // Elimina un elemento por click
             if (iCnt != 0) { $('#tb' + iCnt).remove(); iCnt = iCnt - 1; }
         
             if (iCnt == 0) { $(container).empty(); 
@@ -47,9 +44,9 @@ $(document).ready(function() {
                 $('#btAdd').attr('class', 'bt') 
 
             }
-        });
+});
 
-        $('#btRemoveAll').click(function() {    // Elimina todos los elementos del contenedor
+$('#btRemoveAll').click(function() {    // Elimina todos los elementos del contenedor
         
             $(container).empty(); 
             $(container).remove(); 
@@ -58,24 +55,4 @@ $(document).ready(function() {
             $('#btAdd').attr('class', 'bt');
 
         });
-    });
-
-    // Obtiene los valores de los textbox al dar click en el boton "Enviar"
-    var divValue, values = '';
-
-    function GetTextValue() {
-
-        $(divValue).empty(); 
-        $(divValue).remove(); values = '';
-
-        $('.input').each(function() {
-            divValue = $(document.createElement('div')).css({
-                padding:'5px', width:'200px'
-            });
-            values += this.value + '<br />'
-        });
-
-        $(divValue).append('<p><b>Tus valores añadidos</b></p>' + values);
-        $('body').append(divValue);
-
-    }
+});
