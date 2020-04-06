@@ -100,6 +100,7 @@ $("select[name='tipo_persona']").change(function() {
 });
 /*=============================================================*/
 /*=============================================================*/
+
 $(".btnPagar").show();
 $(".formPayu").hide();
 $(".alert").remove();
@@ -122,9 +123,21 @@ $("#divTipoDoc").hide("fast");
 document.getElementById("spanText").innerHTML = "DOCUMENTO DE IDENTIDAD DEL REPRESENTANTE LEGAL";
 $("#checkRequi2").attr("required","required");
 $("#checkRequi").removeAttr("required");
+$("select[name='tipo_acom']").attr({disabled: 'disabled'});
+document.getElementById("tipo_acom").style.background = "#EBEBE4";
+
+////////////OBTENER VALOR DE CUALQUIER ATRIBUTO QUE SE LE HALLA
+////////////PUESTO A UN SELECT OPTION/////////////////////////////
+var rango = $('#selConta>option:selected').attr("idRango");
 /*=============================================================*/
 /*=============================================================*/
+/*=============================================================*/
+/*===================LIMPIAR INPUT DROPIFY========================*/
 var drEvent = $('#foto_vig_poder').dropify();
                     drEvent = drEvent.data('dropify');
                     drEvent.resetPreview();
                     drEvent.clearElement();
+
+////////////CONTAR DIV POR CLASE/////////////////////
+var divs = document.getElementsByClassName("hola").length;
+console.log("Hay " + divs + " elementos");
