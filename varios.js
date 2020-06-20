@@ -125,6 +125,7 @@ $("#checkRequi2").attr("required","required");
 $("#checkRequi").removeAttr("required");
 $("select[name='tipo_acom']").attr({disabled: 'disabled'});
 document.getElementById("tipo_acom").style.background = "#EBEBE4";
+$("#RucApi").val(datos[0]);
 
 ////////////OBTENER VALOR DE CUALQUIER ATRIBUTO QUE SE LE HALLA
 ////////////PUESTO A UN SELECT OPTION/////////////////////////////
@@ -141,3 +142,30 @@ var drEvent = $('#foto_vig_poder').dropify();
 ////////////CONTAR DIV POR CLASE/////////////////////
 var divs = document.getElementsByClassName("hola").length;
 console.log("Hay " + divs + " elementos");
+
+////////////CERRAR MODAL DE BOTSTRAP 3/////////////////////
+$('#exampleModal').modal('hide');
+
+////////////OBTENER VALOR DE INPUT CHECKED (TRUE OR FALSE)/////////////////////
+if( $('.micheckbox').prop('checked') ) {
+    alert('Seleccionado');
+}
+
+$(document).ready(function()
+		{
+		$("#boton").click(function () {	 
+			if( $("#formulario input[name='edad']:radio").is(':checked')) {  
+				alert("Bien!!!, la edad seleccionada es: " + $('input:radio[name=edad]:checked').val());
+				$("#formulario").submit();  
+				} else{  
+					alert("Selecciona la edad por favor!!!");  
+					}  
+		});
+	 });
+
+////////////OBTENER EL VALUE DE UN GRUPO DE INPUT RADIO BUTTON/////////////////////
+$('input:radio[name=selectModo]:checked').val()
+////////////OBTENER SI EL GRUPO DE INPUT RADIO, VIENE SELECCIONADO/////////////////////
+$("input[name='selectModo']:radio").is(':checked');
+////////////SELECCIONAR EL PRIMER SELECT OR JJ/////////////////////
+$('#selectDistFirmaVen').prop('selectedIndex',0);
