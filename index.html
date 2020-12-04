@@ -28,6 +28,45 @@
 FUNCION ONCHANGE, AL CAMBIAR EL VALOR DEL INPUT	
 <input type="text" name="textotest">
 </p>
+
+
+
+<!--=====================================
+FORMULARIO CONTÁCTENOS
+======================================-->
+
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 formContacto infoContacto  footerCategorias">
+	
+	<h4 style="color:#999;">RESUELVA SU INQUIETUD</h4>
+
+	<form role="form" method="post" id="formContact" onsubmit="return validarContactenos()">
+
+  		<input type="text" id="nombreContactenos" name="nombreContactenos" class="form-control" placeholder="Escriba su nombre" required> 
+
+   		<br>
+      
+			<input type="email" id="emailContactenos" name="emailContactenos" class="	form-control" placeholder="Escriba su correo electrónico" required>  
+
+			<br>
+	     	          
+			<textarea id="mensajeContactenos" name="mensajeContactenos" class="form-control" placeholder="Escriba su mensaje" rows="5" required></textarea>
+
+			<br>
+
+			<input type="submit" value="Enviar" class="btn btn-default backColor pull-right" id="enviar">         
+
+	</form>
+
+	<!--<?php 
+
+		$contactenos = new ControladorUsuarios();
+		$contactenos -> ctrFormularioContactenos();
+
+	?>-->
+
+</div>
+
+
 <script type="text/javascript" src="varios.js"></script>
 
 
